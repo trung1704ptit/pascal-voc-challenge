@@ -27,12 +27,11 @@ all_records = df.to_dict('records')
 list_of_images = []
 
 if all_records:
-    for _ in range(10):
-        rand_item = randint(0, len(all_records))
-        print(rand_item)
-        record = all_records[rand_item]
-        print(record)
-        img_path = constants.images_path + record['image_id']
-        img = cv2.imread(img_path)
-        draw_boudingbox(record)
+    rand_item = randint(0, len(all_records))
+    print(rand_item)
+    record = all_records[rand_item]
+    print(record)
+    img_path = constants.images_path + record['image_id']
+    img = cv2.imread(img_path)
+    draw_boudingbox(record)
     cv2.waitKey(0)
